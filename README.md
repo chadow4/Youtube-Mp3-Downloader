@@ -1,4 +1,4 @@
-# python-youtube-downloader
+# Youtube-Mp3-Downloader
 
 Here is a little python script to download your youtube music easily in mp3 format ^^
 
