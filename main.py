@@ -1,26 +1,40 @@
 from pytube import YouTube
 import os
+from art import *
 
-yt = YouTube(str(input("Entrez le lien de la vidéo youtube : \n ")))
+def header():
+    print("\n▪====================================================================================================================================================▪\n")
+    tprint("Julien  Youtube   Downloader")
+    print( "▪====================================================================================================================================================▪\n")
 
-video = yt.streams.filter(only_audio=True).first()
+def youtube_video_download():
 
-# choix du chemin du type : C:\Users\Chadow4-PC\Desktop
+    yt = YouTube(str(input("Entrez le lien de la vidéo youtube : ")))
 
-print("Entrez le chemin dans lequel vous voulez mettre le fichier audio (ou enter pour le répertoire courant)")
+    video = yt.streams.filter(only_audio=True).first()
 
-destination = str(input(" ")) or '.'
+    # choix du chemin du type : C:\Users\Chadow4-PC\Desktop
 
-out_file = video.download(output_path=destination)
+    destination = str(input("Entrez le chemin dans lequel vous voulez mettre le fichier audio (ou enter pour le répertoire courant) : ")) or '.'
 
-base, ext = os.path.splitext(out_file)
+    out_file = video.download(output_path=destination)
 
-new_file = base + '.mp3'
+    base, ext = os.path.splitext(out_file)
 
-os.rename(out_file, new_file)
+    new_file = base + '.mp3'
 
-print("Titre de la video: ",yt.title)
-print("Nombre de vues: ",yt.views)
-print("Longueur de la video: ",yt.length)
+    os.rename(out_file, new_file)
 
-print(" Votre musique a était téléchargé !")
+    print("`\nTitre de la video: ",yt.title)
+    print("\nNombre de vues: ",yt.views)
+    print("\nLongueur de la video: ",yt.length)
+
+    print("\nVotre musique a était téléchargé !")
+
+def credit():
+    print("\nmerci d'avoir utilisé ce downloader :)")
+    print("\ncréateur : https://github.com/chadow4")
+
+header()
+youtube_video_download()
+credit()
