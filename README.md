@@ -10,3 +10,5 @@ You can run this script either in your favorite ide which will install the depen
 Install the pytube package : ```pip installer pytube```
 
 Here you go ^^
+
+![image](https://user-images.githubusercontent.com/73313152/168448008-cef739b1-a4cb-4b9e-9f24-5cc7b172ad7a.png)
